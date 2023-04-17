@@ -1,0 +1,30 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules
+
+# Environment files
+.env
+
+# Config files
+config/*.js
+
+# Ignore package-lock.json unless it is updated
+package-lock.json
+
+# Ignore IDE settings
+.vscode
+.idea
+*.sublime-workspace
+
+# Ignore PM2 configuration file
+ecosystem.config.js
