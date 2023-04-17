@@ -10,7 +10,7 @@ module.exports = {
       max_restarts: 10,
       restart_delay: 5000,
       exp_backoff_restart_delay: 100,
-      max_memory_restart: "1G",
+      max_memory_restart: "500M",
       error_file: "./logs/pm2-error.log",
       out_file: "./logs/pm2-out.log",
       log_date_format: "YYYY-MM-DD HH:mm:ss",
