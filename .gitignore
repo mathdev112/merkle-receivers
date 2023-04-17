@@ -25,6 +25,3 @@ package-lock.json
 .vscode
 .idea
 *.sublime-workspace
-
-# Ignore PM2 configuration file
-ecosystem.config.js
