@@ -2,11 +2,23 @@ const express = require("express");
 const dotenv = require("dotenv");
 const Wallet = require("./Wallet");
 const cors = require("cors");
+const fs = require('fs');
 const db = require("./db");
 
 dotenv.config();
 
 const app = express();
+
+// Read the private key and SSL certificate files into memory
+const privateKey = fs.readFileSync('/etc/ssl/private/server.key');
+const certificate = fs.readFileSync('/etc/ssl/certs/server.crt');
+
+// Create an HTTPS server
+const server = https.createServer({
+  key: privateKey,
+  cert: certificate
+}, app);
+
 const port = process.env.PORT || 3000;
 
 app.use(cors());
@@ -48,6 +60,7 @@ app.use((error, req, res, next) => {
   res.status(500).json({ error: "Internal server error" });
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+// Start the server
+server.listen(443, () => {
+  console.log('HTTPS server running on port 443');
 });
