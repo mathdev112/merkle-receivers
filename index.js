@@ -10,7 +10,7 @@ const db = require("./db");
 dotenv.config();
 
 const app = express();
-openssl x509 -in /etc/ssl/private/cert.pem -text -noout
+
 // Read the private key and SSL certificate files into memory
 const privateKey = fs.readFileSync('/etc/ssl/private/server.key');
 const certificate = fs.readFileSync('/etc/ssl/certs/server.crt');
